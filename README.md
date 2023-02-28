@@ -8,18 +8,18 @@ This is a simple application to help you manage your personal finances. You can 
 
 To use this application, you need to have Node.js and TypeScript installed on your computer.
 
-### Installation
-
-- Install dependencies:
+### Install dependencies
 
 ```bash
 npm install
 ```
 
-- Build the application:
+### First time (SQLite)
+
+You need to create tables in database:
 
 ```bash
-npm run build
+npm run migrate
 ```
 
 ### Usage
