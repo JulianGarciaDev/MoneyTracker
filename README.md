@@ -30,7 +30,7 @@ To run the application, simply type:
 npm start
 ```
 
-This command run: `npx nodemon intex.ts`. Change it on `package.json`.
+This command run: `npx nodemon src/intex.ts`. Change it on `package.json`.
 
 ## License
 
