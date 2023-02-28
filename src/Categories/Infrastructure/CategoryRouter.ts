@@ -16,9 +16,10 @@ import { GetCategory } from "../Application/GetCategory";
 import { UpdateCategory } from "../Application/UpdateCategory";
 import { DeleteCategory } from "../Application/DeleteCategory";
 
-export const router = Router();
 const dbFile = process.env.DB_PATH;
 const categoryRepository = new CategoriesSQLite(dbFile);
+
+export const router = Router();
 
 router.get("/", async (req, res) => {
   try {

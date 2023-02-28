@@ -30,8 +30,6 @@ To run the application, simply type:
 npm start
 ```
 
-This command run: `npx nodemon src/intex.ts`. Change it on `package.json`.
-
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
