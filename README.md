@@ -30,6 +30,10 @@ To run the application, simply type:
 npm start
 ```
 
+### Swagger
+
+http://localhost:3001/api/
+
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
