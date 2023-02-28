@@ -8,7 +8,7 @@ import {
   AccountNameRequiredError,
 } from "../Domain/AccountErrors";
 import { AccountExists } from "./AccountExists";
-import { defaultCurrency, defaultType } from "../Domain/AccountDefaults";
+import { defaultCurrency, defaultAccountType } from "../Domain/AccountDefaults";
 
 export class CreateAccount {
   protected accountExists: AccountExists;
@@ -57,7 +57,7 @@ export class CreateAccount {
   private checkTypeAccount(
     partialEntity: PartialAccountEntity
   ): PartialAccountEntity {
-    partialEntity.type = partialEntity.type || defaultType;
+    partialEntity.type = partialEntity.type || defaultAccountType;
     return partialEntity;
   }
 
