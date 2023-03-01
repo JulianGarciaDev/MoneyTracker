@@ -1,7 +1,7 @@
 import sqlite3 from "sqlite3";
 import { Database, open, Statement } from "sqlite";
 import { UnionSQL } from "./UnionSQL";
-import { EqType } from "../Domain/EqType";
+import { EqType } from "../../Domain/EqType";
 
 sqlite3.verbose();
 

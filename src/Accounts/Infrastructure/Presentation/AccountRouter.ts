@@ -1,20 +1,20 @@
 require("dotenv").config();
 import Router from "express";
 
-import { CheckParams } from "../../Shared/Domain/CheckParams";
+import { CheckParams } from "../../../Shared/Domain/CheckParams";
+import { AccountHttpErrors } from "./AccountHttpErrors";
+import { AccountsSQLite } from "../Persistence/AccountsSQLite";
+import { PartialAccountEntity } from "../../Domain/AccountEntity";
+
+import { CreateAccount } from "../../Application/CreateAccount";
+import { GetManyAccounts } from "../../Application/GetManyAccounts";
+import { GetAccount } from "../../Application/GetAccount";
+import { UpdateAccount } from "../../Application/UpdateAccount";
+import { DeleteAccount } from "../../Application/DeleteAccount";
 import {
   BadUuidError,
   NameRequiredError,
-} from "../../Shared/Infrastructure/Errors/RequestErrors";
-import { AccountHttpErrors } from "./AccountHttpErrors";
-import { AccountsSQLite } from "./AccountsSQLite";
-import { PartialAccountEntity } from "../Domain/AccountEntity";
-
-import { CreateAccount } from "../Application/CreateAccount";
-import { GetManyAccounts } from "../Application/GetManyAccounts";
-import { GetAccount } from "../Application/GetAccount";
-import { UpdateAccount } from "../Application/UpdateAccount";
-import { DeleteAccount } from "../Application/DeleteAccount";
+} from "../../../Shared/Infrastructure/Presentation/RequestErrors";
 
 const dbFile = process.env.DB_PATH;
 const accountRepository = new AccountsSQLite(dbFile);

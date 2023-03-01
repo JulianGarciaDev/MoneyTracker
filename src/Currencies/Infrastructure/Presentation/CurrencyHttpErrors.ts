@@ -1,7 +1,7 @@
 import { Response } from "express";
-import { CatchHttpErrors } from "../../Shared/Infrastructure/Errors/CatchHttpErrors";
-import { NotFoundError } from "../../Shared/Infrastructure/Errors/HttpErrors";
-import { CurrencyNotFoundError } from "../Domain/CurrencyErrors";
+import { CatchHttpErrors } from "../../../Shared/Infrastructure/Presentation/CatchHttpErrors";
+import { NotFoundError } from "../../../Shared/Infrastructure/Presentation/HttpErrors";
+import { CurrencyNotFoundError } from "../../Domain/CurrencyErrors";
 
 export class CurrencyHttpErrors {
   constructor(protected err: any) {}

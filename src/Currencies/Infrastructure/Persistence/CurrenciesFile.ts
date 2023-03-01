@@ -1,7 +1,7 @@
-import { DataFile } from "../../Shared/Infrastructure/DataFile";
-import { CurrencyEntity } from "../Domain/CurrencyEntity";
-import { CurrencyNotFoundError } from "../Domain/CurrencyErrors";
-import { ICurrencyRepository } from "../Domain/IAccountRepository";
+import { DataFile } from "../../../Shared/Infrastructure/Persistence/DataFile";
+import { CurrencyEntity } from "../../Domain/CurrencyEntity";
+import { CurrencyNotFoundError } from "../../Domain/CurrencyErrors";
+import { ICurrencyRepository } from "../../Domain/IAccountRepository";
 
 export class CurrenciesFile implements ICurrencyRepository {
   protected dataFile: DataFile;

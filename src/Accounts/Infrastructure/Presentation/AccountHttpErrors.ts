@@ -1,15 +1,15 @@
 import { Response } from "express";
-import { CatchHttpErrors } from "../../Shared/Infrastructure/Errors/CatchHttpErrors";
+import { CatchHttpErrors } from "../../../Shared/Infrastructure/Presentation/CatchHttpErrors";
 import {
   ConflictError,
   InternalServerError,
   NotFoundError,
-} from "../../Shared/Infrastructure/Errors/HttpErrors";
+} from "../../../Shared/Infrastructure/Presentation/HttpErrors";
 import {
   AccountNameDuplicatedError,
   AccountNotFoundError,
   AccountUuidDuplicatedError,
-} from "../Domain/AccountErrors";
+} from "../../Domain/AccountErrors";
 
 export class AccountHttpErrors {
   constructor(protected err: any) {}

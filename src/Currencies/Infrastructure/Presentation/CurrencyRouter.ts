@@ -1,10 +1,10 @@
 require("dotenv").config();
 import { Router } from "express";
-import { CategoryHttpErrors } from "../../Categories/Infrastructure/CategoryHttpErrors";
-import { BadCodeError } from "../../Shared/Infrastructure/Errors/RequestErrors";
-import { GetAllCurrencies } from "../Application/GetAllCurrencies";
-import { GetCurrency } from "../Application/GetCurrency";
-import { CurrenciesFile } from "./CurrenciesFile";
+import { BadCodeError } from "../../../Shared/Infrastructure/Presentation/RequestErrors";
+import { GetAllCurrencies } from "../../Application/GetAllCurrencies";
+import { GetCurrency } from "../../Application/GetCurrency";
+import { CurrenciesFile } from "../Persistence/CurrenciesFile";
+import { CurrencyHttpErrors } from "./CurrencyHttpErrors";
 
 export const router = Router();
 const pathFile = process.env.CURRENCIES_DATA_PATH;
@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
     const currencies = new GetAllCurrencies(currencyRepository).execute();
     res.json(currencies);
   } catch (err: any) {
-    new CategoryHttpErrors(err).catchAndResponse(res);
+    new CurrencyHttpErrors(err).catchAndResponse(res);
   }
 });
 
@@ -29,6 +29,6 @@ router.get("/:code", async (req, res) => {
     const currency = getCurrency.execute(currencyCode);
     res.json(currency);
   } catch (err: any) {
-    new CategoryHttpErrors(err).catchAndResponse(res);
+    new CurrencyHttpErrors(err).catchAndResponse(res);
   }
 });

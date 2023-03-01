@@ -1,15 +1,18 @@
-import { SQLite } from "../../Shared/Infrastructure/SQLite";
-import { UnionSQL } from "../../Shared/Infrastructure/UnionSQL";
-import { EqType } from "../../Shared/Domain/EqType";
+import { SQLite } from "../../../Shared/Infrastructure/Persistence/SQLite";
+import { UnionSQL } from "../../../Shared/Infrastructure/Persistence/UnionSQL";
+import { EqType } from "../../../Shared/Domain/EqType";
 
-import { AccountEntity, PartialAccountEntity } from "../Domain/AccountEntity";
-import { IAccountRepository } from "../Domain/IAccountRepository";
+import {
+  AccountEntity,
+  PartialAccountEntity,
+} from "../../Domain/AccountEntity";
+import { IAccountRepository } from "../../Domain/IAccountRepository";
 import { AccountMapper } from "./AccountMapper";
 import { AccountModel } from "./AccountModel";
 import {
   AccountNotFoundError,
   AccountUuidDuplicatedError,
-} from "../Domain/AccountErrors";
+} from "../../Domain/AccountErrors";
 
 export class AccountsSQLite implements IAccountRepository {
   protected sqlite: SQLite;

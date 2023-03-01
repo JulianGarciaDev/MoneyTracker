@@ -1,18 +1,18 @@
-import { SQLite } from "../../Shared/Infrastructure/SQLite";
-import { UnionSQL } from "../../Shared/Infrastructure/UnionSQL";
-import { EqType } from "../../Shared/Domain/EqType";
+import { SQLite } from "../../../Shared/Infrastructure/Persistence/SQLite";
+import { UnionSQL } from "../../../Shared/Infrastructure/Persistence/UnionSQL";
+import { EqType } from "../../../Shared/Domain/EqType";
 
 import {
   CategoryEntity,
   PartialCategoryEntity,
-} from "../Domain/CategoryEntity";
-import { ICategoryRepository } from "../Domain/ICategoryRepository";
+} from "../../Domain/CategoryEntity";
+import { ICategoryRepository } from "../../Domain/ICategoryRepository";
 import { CategoryMapper } from "./CategoryMapper";
 import { CategoryModel } from "./CategoryModel";
 import {
   CategoryNotFoundError,
   CategoryUuidDuplicatedError,
-} from "../Domain/CategoryErrors";
+} from "../../Domain/CategoryErrors";
 
 export class CategoriesSQLite implements ICategoryRepository {
   protected sqlite: SQLite;

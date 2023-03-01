@@ -1,20 +1,20 @@
 require("dotenv").config();
 import Router from "express";
 
-import { CheckParams } from "../../Shared/Domain/CheckParams";
+import { CheckParams } from "../../../Shared/Domain/CheckParams";
 import {
   BadUuidError,
   NameRequiredError,
-} from "../../Shared/Infrastructure/Errors/RequestErrors";
+} from "../../../Shared/Infrastructure/Presentation/RequestErrors";
 import { CategoryHttpErrors } from "./CategoryHttpErrors";
-import { CategoriesSQLite } from "./CategoriesSQLite";
-import { PartialCategoryEntity } from "../Domain/CategoryEntity";
+import { CategoriesSQLite } from "../Persistence/CategoriesSQLite";
+import { PartialCategoryEntity } from "../../Domain/CategoryEntity";
 
-import { CreateCategory } from "../Application/CreateCategory";
-import { GetManyCategories } from "../Application/GetManyCategories";
-import { GetCategory } from "../Application/GetCategory";
-import { UpdateCategory } from "../Application/UpdateCategory";
-import { DeleteCategory } from "../Application/DeleteCategory";
+import { CreateCategory } from "../../Application/CreateCategory";
+import { GetManyCategories } from "../../Application/GetManyCategories";
+import { GetCategory } from "../../Application/GetCategory";
+import { UpdateCategory } from "../../Application/UpdateCategory";
+import { DeleteCategory } from "../../Application/DeleteCategory";
 
 const dbFile = process.env.DB_PATH;
 const categoryRepository = new CategoriesSQLite(dbFile);

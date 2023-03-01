@@ -1,15 +1,15 @@
 import { Response } from "express";
-import { CatchHttpErrors } from "../../Shared/Infrastructure/Errors/CatchHttpErrors";
+import { CatchHttpErrors } from "../../../Shared/Infrastructure/Presentation/CatchHttpErrors";
 import {
   ConflictError,
   InternalServerError,
   NotFoundError,
-} from "../../Shared/Infrastructure/Errors/HttpErrors";
+} from "../../../Shared/Infrastructure/Presentation/HttpErrors";
 import {
   CategoryNameDuplicatedError,
   CategoryNotFoundError,
   CategoryUuidDuplicatedError,
-} from "../Domain/CategoryErrors";
+} from "../../Domain/CategoryErrors";
 
 export class CategoryHttpErrors {
   constructor(protected err: any) {}

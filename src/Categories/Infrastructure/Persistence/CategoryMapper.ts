@@ -1,4 +1,4 @@
-import { CategoryEntity } from "../Domain/CategoryEntity";
+import { CategoryEntity } from "../../Domain/CategoryEntity";
 import { CategoryModel } from "./CategoryModel";
 
 export class CategoryMapper {

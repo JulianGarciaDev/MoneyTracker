@@ -1,4 +1,4 @@
-import { AccountEntity } from "../Domain/AccountEntity";
+import { AccountEntity } from "../../Domain/AccountEntity";
 import { AccountModel } from "./AccountModel";
 
 export class AccountMapper {

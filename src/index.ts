@@ -1,11 +1,11 @@
 import express from "express";
 
 import swaggerUi from "swagger-ui-express";
-import { swaggerSpecification } from "./Shared/Infrastructure/Swagger";
+import { swaggerSpecification } from "./Shared/Infrastructure/Presentation/Swagger";
 
-import { router as categories } from "./Categories/Infrastructure/CategoryRouter";
-import { router as account } from "./Accounts/Infrastructure/AccountRouter";
-import { router as currencies } from "./Currencies/Infrastructure/CurrencyRouter";
+import { router as categories } from "./Categories/Infrastructure/Presentation/CategoryRouter";
+import { router as account } from "./Accounts/Infrastructure/Presentation/AccountRouter";
+import { router as currencies } from "./Currencies/Infrastructure/Presentation/CurrencyRouter";
 
 const port = 3001;
 const app = express();
