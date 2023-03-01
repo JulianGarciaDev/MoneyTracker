@@ -18,7 +18,7 @@ const options = {
     },
   },
   apis: [
-    "./src/Accounts/Infrastructure/AccountRouter*.ts",
+    "./src/Accounts/Infrastructure/Presentation/Swagger/*.ts",
     "./src/Categories/Infrastructure/CategoryRouter.ts",
   ],
 };
