@@ -17,10 +17,7 @@ const options = {
       version: "1.0.0",
     },
   },
-  apis: [
-    "./src/Accounts/Infrastructure/Presentation/Swagger/*.ts",
-    "./src/Categories/Infrastructure/CategoryRouter.ts",
-  ],
+  apis: ["./src/*/Infrastructure/Presentation/Swagger/*.ts"],
 };
 
 export const swaggerSpecification = swaggerJsdoc(options);

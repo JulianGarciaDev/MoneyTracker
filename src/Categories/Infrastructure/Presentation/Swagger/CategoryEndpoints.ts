@@ -1,42 +1,41 @@
 /**
  * @openapi
  *
- * /account/:
+ * /category/:
  *  get:
- *    tags: [Account]
- *    summary: Get all accounts
- *    description: Use to request all accounts
+ *    tags: [Category]
+ *    summary: Get all categories
+ *    description: Use to request all categories
  *    produces:
  *      - application/json
  *    responses:
  *      200:
- *        description: List of accounts
+ *        description: List of categories
  *        content:
  *          application/json:
  *            schema:
  *              type: array
  *              items:
- *                $ref: '#/components/schemas/AccountResponse'
+ *                $ref: '#/components/schemas/CategoryResponse'
  *              example:
  *                - uuid: 4911b72b-a448-4e2d-874b-ed91874d1061
- *                  name: CaixaBank
- *                  icon: CA
- *                  type: General
- *                  currency: EUR
+ *                  name: Home
+ *                  icon: HO
  *                  visible: 1
  *                  enable: 1
- *                - uuid: 128e8322-991c-47ae-9ba1-845665d7d0ad
- *                  name: Santander
- *                  icon: SA
- *                  type: Savings
- *                  currency: EUR
+ *                  parentUuid: ""
+ *                - uuid: 858e8322-991c-47ae-97a1-845665d7d010
+ *                  name: Health
+ *                  icon: HE
  *                  visible: 1
  *                  enable: 1
+ *                  parentUuid: ""
+ *
  *
  *  post:
- *    tags: [Account]
- *    summary: Create a new account
- *    description: Use to create an account
+ *    tags: [Category]
+ *    summary: Create a new category
+ *    description: Use to create an category
  *    produces:
  *      - application/json
  *    requestBody:
@@ -44,85 +43,85 @@
  *      content:
  *        application/json:
  *          schema:
- *            $ref: '#/components/schemas/AccountCreate'
+ *            $ref: '#/components/schemas/CategoryCreate'
  *    responses:
  *      201:
- *        description: Account created
+ *        description: Category created
  *        content:
  *          application/json:
  *            schema:
- *              $ref: '#/components/schemas/AccountResponse'
+ *              $ref: '#/components/schemas/CategoryResponse'
  *      400:
  *        description: Name is required
  *      409:
  *        description: Name already exists
  *
- * /account/{uuid}:
+ * /category/{uuid}:
  *  get:
- *    tags: [Account]
- *    summary: Get one account
- *    description: Use to request one account
+ *    tags: [Category]
+ *    summary: Get one category
+ *    description: Use to request one category
  *    produces:
  *      - application/json
  *    parameters:
  *      - in: path
  *        name: uuid
- *        description: Uuid of account
+ *        description: Uuid of category
  *    responses:
  *      200:
- *        description: Account by uuid
+ *        description: Category by uuid
  *        content:
  *          application/json:
  *            schema:
- *              $ref: '#/components/schemas/AccountResponse'
+ *              $ref: '#/components/schemas/CategoryResponse'
  *      400:
  *        description: Bad uuid
  *      404:
- *        description: Account not found
+ *        description: Category not found
  *
  *  put:
- *    tags: [Account]
- *    summary: Update an account
- *    description: Use to update an account
+ *    tags: [Category]
+ *    summary: Update an category
+ *    description: Use to update an category
  *    produces:
  *      - application/json
  *    parameters:
  *      - in: path
  *        name: uuid
- *        description: Uuid of account
+ *        description: Uuid of category
  *    requestBody:
  *      required: true
  *      content:
  *        application/json:
  *          schema:
- *            $ref: '#/components/schemas/AccountUpdate'
+ *            $ref: '#/components/schemas/CategoryUpdate'
  *    responses:
  *      200:
- *        description: Account updated
+ *        description: Category updated
  *        content:
  *          application/json:
  *            schema:
- *              $ref: '#/components/schemas/AccountResponse'
+ *              $ref: '#/components/schemas/CategoryResponse'
  *      400:
  *        description: Bad uuid
  *      404:
- *        description: Account not found
+ *        description: Category or parent category not found
  *      409:
  *        description: Name already exists
  *
  *  delete:
- *    tags: [Account]
- *    summary: Delete an account
- *    description: Use to delete an account
+ *    tags: [Category]
+ *    summary: Delete an category
+ *    description: Use to delete an category
  *    produces:
  *      - application/json
  *    parameters:
  *      - in: path
  *        name: uuid
- *        description: Uuid of account
+ *        description: Uuid of category
  *    responses:
  *      200:
- *        description: Account deleted
+ *        description: Category deleted
  *        content:
  *          application/json:
  *            schema:
@@ -131,5 +130,5 @@
  *      400:
  *        description: Bad uuid
  *      404:
- *        description: Account not found
+ *        description: Category not found
  */

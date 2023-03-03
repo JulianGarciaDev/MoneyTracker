@@ -2,6 +2,6 @@
  * @openapi
  *
  * tags:
- *  name: Accounts
+ *  name: Account
  *  description: The accounts managing API
  */

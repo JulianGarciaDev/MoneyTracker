@@ -9,13 +9,17 @@ import {
   CategoryNameDuplicatedError,
   CategoryNotFoundError,
   CategoryUuidDuplicatedError,
+  ParentCategoryNotFoundError,
 } from "../../Domain/CategoryErrors";
 
 export class CategoryHttpErrors {
   constructor(protected err: any) {}
 
   catchAndResponse(res: Response) {
-    if (this.err instanceof CategoryNotFoundError) {
+    if (
+      this.err instanceof CategoryNotFoundError ||
+      this.err instanceof ParentCategoryNotFoundError
+    ) {
       this.err = new NotFoundError(this.err.message);
     } else if (this.err instanceof CategoryNameDuplicatedError) {
       this.err = new ConflictError(this.err.message);
