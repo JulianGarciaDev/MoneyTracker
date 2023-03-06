@@ -21,17 +21,17 @@
  *                - code: EUR
  *                  name: Euro
  *                  decimals: 2
- *                  unicode: U+020AC
- *                  hexCode: &#x20AC;
- *                  htmlCode: &#8364;
- *                  htmlEntity: &euro;
+ *                  unicode: "U+020AC"
+ *                  hexCode: "&#x20AC;"
+ *                  htmlCode: "&#8364;"
+ *                  htmlEntity: "&euro;"
  *                - code: USD
  *                  name: United States dollar
  *                  decimals: 2
- *                  unicode: U+00024
- *                  hexCode: &#x24;
- *                  htmlCode: &#36;
- *                  htmlEntity: &dollar;
+ *                  unicode: "U+00024"
+ *                  hexCode: "&#x24;"
+ *                  htmlCode: "&#36;"
+ *                  htmlEntity: "&dollar;"
  *
  * /currency/{code}:
  *  get:

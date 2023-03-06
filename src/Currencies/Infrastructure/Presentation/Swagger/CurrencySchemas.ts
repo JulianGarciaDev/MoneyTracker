@@ -30,8 +30,8 @@
  *        code: EUR
  *        name: Euro
  *        decimals: 2
- *        unicode: U+020AC
- *        hexCode: &#x20AC;
- *        htmlCode: &#8364;
- *        htmlEntity: &euro;
+ *        unicode: "U+020AC"
+ *        hexCode: "&#x20AC;"
+ *        htmlCode: "&#8364;"
+ *        htmlEntity: "&euro;"
  */
