@@ -28,9 +28,11 @@ export class CategoriesSQLite implements ICategoryRepository {
       await this.getCategory(category.uuid);
       throw new CategoryUuidDuplicatedError();
     } catch {
+      const datetime = this.sqlite.getFormattedDateTime();
       const sql = `
-        INSERT INTO Categories (uuid, name, icon, visible, enable, parent_uuid)
-        VALUES (?, ?, ?, ?, ?, ?);
+        INSERT INTO Categories
+        (uuid, name, icon, visible, enable, parent_uuid, created_at, modified_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?);
         `;
       const params = [
         category.uuid,
@@ -39,17 +41,46 @@ export class CategoriesSQLite implements ICategoryRepository {
         category.visible,
         category.enable,
         category.parentUuid,
+        datetime,
+        datetime,
       ];
       await this.sqlite.run(sql, params);
       return true;
     }
   }
 
+  async insertCategories(categories: CategoryEntity[]): Promise<Boolean> {
+    const datetime = this.sqlite.getFormattedDateTime();
+    const sql = `
+      INSERT INTO Categories
+      (uuid, name, icon, visible, enable, parent_uuid, created_at, modified_at)
+      VALUES
+      `;
+    let fields = "";
+    let params: any[] = [];
+    categories.forEach((category) => {
+      fields += "(?, ?, ?, ?, ?, ?, ?, ?), ";
+      params.push(
+        category.uuid,
+        category.name,
+        category.icon,
+        category.visible,
+        category.enable,
+        category.parentUuid,
+        datetime,
+        datetime
+      );
+    });
+    fields = fields.substring(0, fields.length - 2);
+    await this.sqlite.run(sql + fields, params);
+    return true;
+  }
+
   async updateCategory(category: PartialCategoryEntity): Promise<Boolean> {
     const sqlUpdate = `UPDATE Categories SET `;
     let [fields, params] = this.createParamsSql(category, UnionSQL.Set);
     fields += "modified_at = ? ";
-    params.push(new Date());
+    params.push(this.sqlite.getFormattedDateTime());
     const where = "WHERE uuid = ?;";
     params.push(category.uuid);
     const sql = sqlUpdate + fields + where;
@@ -94,7 +125,7 @@ export class CategoriesSQLite implements ICategoryRepository {
       UPDATE Categories SET enable = false, modified_at = ?
       WHERE uuid = ?;
     `;
-    const params = [new Date(), uuid];
+    const params = [this.sqlite.getFormattedDateTime(), uuid];
     const result = await this.sqlite.run(sql, params);
     return result;
   }

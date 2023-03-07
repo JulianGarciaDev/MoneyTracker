@@ -22,3 +22,22 @@ CREATE TABLE IF NOT EXISTS Accounts (
   created_at    DATETIME  NOT NULL      DEFAULT CURRENT_TIMESTAMP,
   modified_at   DATETIME  NOT NULL      DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE IF NOT EXISTS Records (
+  id              INTEGER   PRIMARY KEY   AUTOINCREMENT,
+  uuid            TEXT      NOT NULL      UNIQUE,
+  type            TEXT      NOT NULL,
+  account_from    TEXT      NOT NULL,
+  account_to      TEXT,
+  category_uuid   TEXT      NOT NULL,
+  amount          REAL      NOT NULL,
+  currency_code   TEXT      NOT NULL,
+  date            TEXT      NOT NULL,
+  time            TEXT      NOT NULL,
+  comment         TEXT,
+  recipient       TEXT,
+  method          TEXT,
+  place           TEXT,
+  created_at      DATETIME  NOT NULL      DEFAULT CURRENT_TIMESTAMP,
+  modified_at     DATETIME  NOT NULL      DEFAULT CURRENT_TIMESTAMP
+);

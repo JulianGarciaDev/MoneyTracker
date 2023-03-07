@@ -20,6 +20,12 @@ export class CreateCategory {
     this.categoryExists = new CategoryExists(this.categoryRepository);
   }
 
+  async full(entity: CategoryEntity): Promise<CategoryEntity> {
+    entity = (await this.checkParams(entity)) as CategoryEntity;
+    await this.categoryRepository.createCategory(entity);
+    return await new GetCategory(this.categoryRepository).byUuid(entity.uuid);
+  }
+
   async visible(partialEntity: PartialCategoryEntity): Promise<CategoryEntity> {
     partialEntity = await this.checkParams(partialEntity);
     const newUuid = uuidv4();

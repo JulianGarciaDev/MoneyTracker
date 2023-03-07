@@ -1,0 +1,146 @@
+[
+  {
+    "uuid": "82550fc1-d65e-45b3-aced-16e69093dbe3",
+    "name": "Hogar",
+    "icon": "HO",
+    "visible": "1",
+    "enable": "1",
+    "parentUuid": ""
+  },
+  {
+    "uuid": "fe40c4ed-dfb5-4a4d-bd03-e5e8a3d4f930",
+    "name": "Ocio",
+    "icon": "OC",
+    "visible": "1",
+    "enable": "1",
+    "parentUuid": ""
+  },
+  {
+    "uuid": "e945c35f-c8cb-45a9-baa3-e82605fdc53c",
+    "name": "Coche",
+    "icon": "CO",
+    "visible": "1",
+    "enable": "1",
+    "parentUuid": ""
+  },
+  {
+    "uuid": "e7ee02ae-2cda-4c0b-9880-4d5e0da01df9",
+    "name": "Ropa",
+    "icon": "RO",
+    "visible": "1",
+    "enable": "1",
+    "parentUuid": ""
+  },
+  {
+    "uuid": "f30f5491-5e6a-4175-9042-bec5be430e4b",
+    "name": "Salud",
+    "icon": "SA",
+    "visible": "1",
+    "enable": "1",
+    "parentUuid": ""
+  },
+  {
+    "uuid": "61709dee-8c87-4130-881c-dd22e591fdce",
+    "name": "Otros",
+    "icon": "OT",
+    "visible": "1",
+    "enable": "1",
+    "parentUuid": ""
+  },
+  {
+    "uuid": "e16f0158-e350-469d-a1e6-502dd72a4d7c",
+    "name": "Gasolina",
+    "icon": "GA",
+    "visible": "1",
+    "enable": "1",
+    "parentUuid": "e945c35f-c8cb-45a9-baa3-e82605fdc53c"
+  },
+  {
+    "uuid": "707cea11-580e-4d4e-99e9-b4e2694af52e",
+    "name": "Mantenimiento",
+    "icon": "MA",
+    "visible": "1",
+    "enable": "1",
+    "parentUuid": "e945c35f-c8cb-45a9-baa3-e82605fdc53c"
+  },
+  {
+    "uuid": "bdd5b29c-2f15-4ae9-a3b9-17de8671cdab",
+    "name": "Limpieza",
+    "icon": "LI",
+    "visible": "1",
+    "enable": "1",
+    "parentUuid": "e945c35f-c8cb-45a9-baa3-e82605fdc53c"
+  },
+  {
+    "uuid": "8f799511-a6dd-4bc3-b402-7850e2eb62dd",
+    "name": "Neumáticos",
+    "icon": "NE",
+    "visible": "1",
+    "enable": "1",
+    "parentUuid": "e945c35f-c8cb-45a9-baa3-e82605fdc53c"
+  },
+  {
+    "uuid": "b691026b-200d-4ec6-80f2-18ed10977d6c",
+    "name": "ITV",
+    "icon": "IT",
+    "visible": "1",
+    "enable": "1",
+    "parentUuid": "e945c35f-c8cb-45a9-baa3-e82605fdc53c"
+  },
+  {
+    "uuid": "da13ee63-fdb3-434d-85af-e0bdebcaff87",
+    "name": "Accesorios",
+    "icon": "AC",
+    "visible": "1",
+    "enable": "1",
+    "parentUuid": "e945c35f-c8cb-45a9-baa3-e82605fdc53c"
+  },
+  {
+    "uuid": "96bebc18-ba11-413e-ae8d-ef87de505376",
+    "name": "Multas",
+    "icon": "MU",
+    "visible": "1",
+    "enable": "1",
+    "parentUuid": "e945c35f-c8cb-45a9-baa3-e82605fdc53c"
+  },
+  {
+    "uuid": "232fdb5f-8239-4d08-9978-da0ce0fadeec",
+    "name": "Aparcamiento",
+    "icon": "AP",
+    "visible": "1",
+    "enable": "1",
+    "parentUuid": "e945c35f-c8cb-45a9-baa3-e82605fdc53c"
+  },
+  {
+    "uuid": "9eec1388-9bf0-4382-9680-a7f906274c93",
+    "name": "Peaje",
+    "icon": "PE",
+    "visible": "1",
+    "enable": "1",
+    "parentUuid": "e945c35f-c8cb-45a9-baa3-e82605fdc53c"
+  },
+  {
+    "uuid": "078499bb-c3e2-4539-b121-d0959622458c",
+    "name": "Averías",
+    "icon": "AV",
+    "visible": "1",
+    "enable": "1",
+    "parentUuid": "e945c35f-c8cb-45a9-baa3-e82605fdc53c"
+  },
+  {
+    "uuid": "a446a5e4-edff-4aa0-bd39-583f11a92935",
+    "name": "IVTM",
+    "icon": "IV",
+    "visible": "1",
+    "enable": "1",
+    "parentUuid": "e945c35f-c8cb-45a9-baa3-e82605fdc53c"
+  },
+  {
+    "uuid": "d9e734c3-f0ba-48f4-b54a-847785f767c0",
+    "name": "Seguro coche",
+    "icon": "SE",
+    "visible": "1",
+    "enable": "1",
+    "parentUuid": "e945c35f-c8cb-45a9-baa3-e82605fdc53c"
+  }
+]
